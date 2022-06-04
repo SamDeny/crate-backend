@@ -1,0 +1,40 @@
+{
+    "name": "crate/backend",
+    "type": "crate-module",
+    "version": "0.1.0",
+    "description": "The official administration and management backend module for the Crate CMS.",
+    "keywords": [
+        "crate",
+        "backend",
+        "admin",
+        "administration",
+        "module",
+        "cms"
+    ],
+    "homepage": "https://crate.md/module/@crate/backend",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rat.md",
+            "email": "info@crate.md",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0.0",
+        "crate/core": "^0.1.0",
+        "league/csv": "^9.8.0",
+        "phpmailer/phpmailer": "^6.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crate\\Backend\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
