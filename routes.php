@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-use Crate\Http\RouteCollector;
+use \Citrus\Router\Router;
 
-/** @var RouteCollector */
-$collector = $collector;
+/** @var \Citrus\Router\Router */
+$router = $router;
 
 /**
  * Registry Routes
@@ -12,74 +12,74 @@ $collector = $collector;
  * be cached, so don't execute any action or dynamically created routes (use 
  * route patterns for such purposes).
  */
-$collector->group([
+$colleroutercroutertor->group([
     'api' => false,                     // Requests are not available via Crate's API handling
     'cli' => false,                     // Requests are not available through Crate's CLI
     'url' => config('backend.url')      // Routes belong explicitly to this URL
-], function(RouteCollector $collector) {
+], function(Router $router) {
 
     // Simple get request method
-    $collector->get('/', BackendController::class);
+    $router->get('/', BackendController::class);
 
     // The form method registers appropriate routes
-    $collector->form('/login', LoginController::class);
-    $collector->form('/forgot', LoginController::class);
-    $collector->form('/remember', LoginController::class);
-    $collector->form('/activate', LoginController::class);
+    $router->form('/login', LoginController::class);
+    $router->form('/forgot', LoginController::class);
+    $router->form('/remember', LoginController::class);
+    $router->form('/activate', LoginController::class);
 
     // Another simple get request method
-    $collector->get('/logout', LoginController::class);
+    $router->get('/logout', LoginController::class);
 
     // Start another group with more shared properties
-    $collector->group([
+    $router->group([
         'middleware' => [AuthenticationMiddleware::class],
         'middlewareOptions' => [
             AuthenticationMiddleware::class => [
                 'redirect' => '/login'
             ]
         ]
-    ], function (RouteCollector $collector) {
+    ], function (Router $router) {
         
         // Simple get request method, but for XHR / Ajax requests only.
-        $collector->get('/auth', AuthController::class)->ajax();
-        $collector->get('/token', TokenController::class)->ajax();
+        $router->get('/auth', AuthController::class)->ajax();
+        $router->get('/token', TokenController::class)->ajax();
 
         // Simple get request method, for ajax only using a dynamic route mapping
-        $collector->get('/refresh/:uuid', TokenController::class)->ajax();
+        $router->get('/refresh/:uuid', TokenController::class)->ajax();
     
         // The ctrl method binds a whole controller to a path
-        $collector->ctrl('/system', SystemController::class);
-        $collector->ctrl('/users', SystemController::class);
+        $router->ctrl('/system', SystemController::class);
+        $router->ctrl('/users', SystemController::class);
     
         // Register additional controllers, which are controlled by parameters.
         // With parameters you can control when a route should be enabled and 
         // executed, before the controller is even initialized.
-        $collector->ctrl('/collection', CollectionsController::class)->param(
+        $router->ctrl('/collection', CollectionsController::class)->condition(
             ModuleEnabledRouteParam::class, ['@crate/collections']
         );
-        $collector->ctrl('/channel', CollectionsController::class)->param(
+        $router->ctrl('/channel', CollectionsController::class)->condition(
             ModuleEnabledRouteParam::class, ['@crate/channels']
         );
-        $collector->ctrl('/form', CollectionsController::class)->param(
+        $router->ctrl('/form', CollectionsController::class)->condition(
             ModuleEnabledRouteParam::class, ['@crate/forms']
         );
-        $collector->ctrl('/singleton', CollectionsController::class)->param(
+        $router->ctrl('/singleton', CollectionsController::class)->condition(
             ModuleEnabledRouteParam::class, ['@crate/singletons']
         );
-        $collector->ctrl('/frontend', FrontendController::class)->param(
+        $router->ctrl('/frontend', FrontendController::class)->condition(
             ModuleEnabledRouteParam::class, ['@crate/frontend']
         );
         
     });
 
     // Register some error pages
-    $collector->error(400, [HTTPErrorController::class, 'e400']);       // Bad Request
-    $collector->error(401, [HTTPErrorController::class, 'e401']);       // Unauthorized
-    $collector->error(403, [HTTPErrorController::class, 'e403']);       // Forbidden
-    $collector->error(404, [HTTPErrorController::class, 'e404']);       // Not Found
-    $collector->error(405, [HTTPErrorController::class, 'e405']);       // Method not allowed
-    $collector->error(409, [HTTPErrorController::class, 'e409']);       // Conflict
-    $collector->error(410, [HTTPErrorController::class, 'e410']);       // Gone
+    $router->error(400, [HTTPErrorController::class, 'e400']);       // Bad Request
+    $router->error(401, [HTTPErrorController::class, 'e401']);       // Unauthorized
+    $router->error(403, [HTTPErrorController::class, 'e403']);       // Forbidden
+    $router->error(404, [HTTPErrorController::class, 'e404']);       // Not Found
+    $router->error(405, [HTTPErrorController::class, 'e405']);       // Method not allowed
+    $router->error(409, [HTTPErrorController::class, 'e409']);       // Conflict
+    $router->error(410, [HTTPErrorController::class, 'e410']);       // Gone
 });
 
 
