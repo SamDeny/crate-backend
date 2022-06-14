@@ -5,7 +5,7 @@ import postCSS from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-    input: './resources/js/index.js',
+    input: './resources/ts/index.ts',
     output: {
         compact: true,
         dir: './public/',

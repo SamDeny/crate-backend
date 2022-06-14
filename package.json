@@ -12,6 +12,7 @@
     ],
     "license": "MIT",
     "author": "rat.md <info@crate.md>",
+    "main": "resources/ts/index.ts",
     "scripts": {
         "build": "rollup -c",
         "build:vendor": "rollup -c rollup.vendor.config.js",

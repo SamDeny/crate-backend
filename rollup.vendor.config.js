@@ -5,8 +5,8 @@ import { terser } from 'rollup-plugin-terser';
 
 export default {
     input: [
-        './resources/js/vendor/alpine.js',
-        './resources/js/vendor/flatpickr.js'
+        './resources/ts/vendor/alpine.js',
+        './resources/ts/vendor/flatpickr.js'
     ],
     output: {
         compact: true,
