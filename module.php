@@ -1,16 +1,14 @@
 <?php declare(strict_types=1);
 
-use Citrus\Http\Request;
-use Citrus\Http\Response;
-use Citrus\Router\Router;
-use Crate\Core\Classes\ModuleRegistry;
+use Crate\Core\Modules\Module;
 
 /**
  * Registry Module
  * ---
  */
-module(function (ModuleRegistry $registry) {
+module(function (Module $module) {
 
-    var_dump($registry);
 
+    $module->routes('routes.php');
+    
 });

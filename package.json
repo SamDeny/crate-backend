@@ -1,0 +1,36 @@
+{
+    "name": "@crate/backend",
+    "version": "0.1.0",
+    "description": "The official administration and management backend module for the Crate CMS.",
+    "keywords": [
+        "crate",
+        "backend",
+        "admin",
+        "administration",
+        "module",
+        "cms"
+    ],
+    "license": "MIT",
+    "author": "rat.md <info@crate.md>",
+    "scripts": {
+        "build": "rollup -c",
+        "build:vendor": "rollup -c rollup.vendor.config.js",
+        "watch": "rollup -c -w"
+    },
+    "devDependencies": {
+        "@rollup/plugin-node-resolve": "^13.3.0",
+        "@rollup/plugin-typescript": "^8.3.3",
+        "alpinejs": "^3.10.2",
+        "autoprefixer": "^10.4.7",
+        "bootstrap-icons": "^1.8.3",
+        "flatpickr": "^4.6.13",
+        "postcss-import": "^14.1.0",
+        "rollup": "^2.75.6",
+        "rollup-plugin-copy": "^3.4.0",
+        "rollup-plugin-postcss": "^4.0.2",
+        "rollup-plugin-terser": "^7.0.2",
+        "tailwindcss": "^3.0.24",
+        "tslib": "^2.4.0",
+        "typescript": "^4.7.3"
+    }
+}

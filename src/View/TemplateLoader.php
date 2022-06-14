@@ -3,16 +3,16 @@
 namespace Crate\Backend\View;
 
 use Citrus\Framework\Application;
-use Crate\Modules\ModuleRegistry;
+use Crate\Core\Modules\ModuleRegistry;
 use Twig\Loader\FilesystemLoader;
 
 class TemplateLoader extends FilesystemLoader
 {
 
-    public const LAYOUT_NAMESPACE = '_layouts';
-    public const PARTIAL_NAMESPACE = '_partials';
-    public const COMPONENT_NAMESPACE = '_components';
-    public const CUSTOM_NAMESPACE = '_custom';
+    public const LAYOUT_NAMESPACE = 'layouts';
+    public const PARTIAL_NAMESPACE = 'partials';
+    public const COMPONENT_NAMESPACE = 'components';
+    public const CUSTOM_NAMESPACE = 'custom';
 
     /**
      * Constructor
@@ -30,7 +30,7 @@ class TemplateLoader extends FilesystemLoader
             self::COMPONENT_NAMESPACE   => [],
             self::CUSTOM_NAMESPACE      => [],
         ];
-        $citrus->triggerEvent(StackEvent::class, 'backend:template', [&$paths]);
+        //$citrus->eventManager->dispatch(StackEvent::class, 'backend:template', [&$paths]);
 
         // Correct Namespacing
         $namespaced = [
@@ -61,10 +61,15 @@ class TemplateLoader extends FilesystemLoader
         }
 
         // Call Parent Contructor
+        $namespaced[self::MAIN_NAMESPACE][] = $root . DIRECTORY_SEPARATOR;
         $namespaced[self::LAYOUT_NAMESPACE][] = $root . DIRECTORY_SEPARATOR . '_layouts';
         $namespaced[self::PARTIAL_NAMESPACE][] = $root . DIRECTORY_SEPARATOR . '_partials';
         $namespaced[self::COMPONENT_NAMESPACE][] = $root . DIRECTORY_SEPARATOR . '_components';
-        parent::__construct($paths, $root);
+        parent::__construct([], $root);
+
+        foreach ($namespaced AS $namespace => $paths) {
+            $this->setPaths($paths, $namespace);
+        }
     }
 
     /**
@@ -74,7 +79,11 @@ class TemplateLoader extends FilesystemLoader
      */
     protected function findTemplate(string $name, bool $throw = true)
     {
-        return $this->findTemplate($name, $throw);
+        if (!str_ends_with($name, '.twig')) {
+            $name .= '.twig';
+        }
+
+        return parent::findTemplate($name, $throw);
     }
 
 }
