@@ -1,0 +1,25 @@
+
+/* ----------------------------------------
+/*  Crate Page
+/* --------------------------------------*/
+
+.focus .crate-page {
+    @apply bg-white dark:bg-white;
+}
+
+.crate-menu + .crate-page {
+    @apply flex-auto;
+    @apply border-t border-zinc-200 dark:border-zinc-700;
+}
+
+.menu-pinned .crate-menu + .crate-page {
+    @apply border-t border-l rounded-tl-lg
+}
+
+.crate-menu + .crate-page .crate-content {
+    @apply px-20 pt-6;
+}
+
+.menu-pinned .crate-menu + .crate-page .crate-content {
+    @apply pl-10 pr-20;
+}

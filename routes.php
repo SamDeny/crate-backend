@@ -1,7 +1,8 @@
 <?php declare(strict_types=1);
 
 use \Citrus\Router\Router;
-use Crate\Backend\Controllers\BackendController;
+use Crate\Backend\Controllers\CollectionsController;
+use Crate\Backend\Controllers\DashboardController;
 
 citrus(function(Router $router) {
     $router->group([
@@ -9,7 +10,9 @@ citrus(function(Router $router) {
     ], function(Router $router) {
     
         // Simple get request method
-        $router->get('/', [BackendController::class, 'index']);
+        $router->get('/', [DashboardController::class, 'index']);
+
+        $router->get('/collections', [CollectionsController::class, 'index']);
     
         // The form method registers appropriate routes
         $router->form('/login', LoginController::class);

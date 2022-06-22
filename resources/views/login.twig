@@ -1,0 +1,66 @@
+{% extends '@layouts/base.twig' %}
+
+{% set html_classes = 'bg-zinc-900' %}
+
+{% block content %}
+    <div class="flex flex-col items-center justify-center w-screen h-screen">
+
+        {% if error %}
+            <div class="h-0">
+                <div class="mb-0 -mt-6 -translate-y-full alert alert-danger">{{ error }}</div>
+            </div>
+        {% endif %}
+
+        <div class="w-[800px] flex align-stretch">
+            <div class="flex flex-col justify-center rounded-l shadow-md basis-1/2 bg-zinc-50 bg-gradient-to-br from-lime-600 to-emerald-600">
+                <header class="pt-4 pb-2 font-semibold text-lime-100">
+                    <h1 class="text-2xl text-center">Crate CMS</h1>
+                </header>
+
+                <article class="px-10 text-sm font-semibold text-center text-lime-100">
+                    <div class="mb-6">
+                        Sign in into your Crate Backend or
+                    </div>
+                    <a href="/" class="inline-block px-4 py-2 transition-colors duration-300 ease-in-out border border-white border-opacity-50 rounded-full hover:bg-white hover:bg-opacity-50 hover:text-lime-900">Return to Website</a>
+                </article>
+            </div>
+
+            <div class="px-8 py-4 rounded-r shadow-md basis-1/2 bg-zinc-50">
+                <header class="py-4 mb-4 font-semibold border-b border-zinc-200">
+                    <h2 class="text-2xl text-center">Login</h2>
+                </header>
+
+                <article class="py-4">
+                    <form method="post" action="">
+                        <div class="mb-3">
+                            <label class="field-label">Username / E-Mail address</label>
+
+                            <div class="field-group">
+                                <div class="field-icon">
+                                    {{ icon('person') }}
+                                </div>
+                                <input type="text" name="user" value="{{ username }}" class="field" placeholder="Username or E-Mail address" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="field-label">Password</label>
+
+                            <div class="field-group">
+                                <div class="field-icon">
+                                    {{ icon('lock') }}
+                                </div>
+                                <input type="password" name="password" value="" class="field" placeholder="Password" />
+                            </div>
+                        </div>
+
+                        <div class="mt-6 text-right">
+                            {{ csrf() }}
+                            <button type="submit" name="action" value="signin" class="button">Sign In</button>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </div>
+{% endblock %}

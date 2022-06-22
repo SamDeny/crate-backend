@@ -1,0 +1,44 @@
+
+/* ----------------------------------------
+/*  Header Color Scheme Circles
+/* --------------------------------------*/
+
+.menu-pinned {
+    [data-crate="menu"],
+    [data-crate="menu"] + div {
+        display: none;
+    }
+}
+
+.color-scheme-button {
+    @apply border-transparent border rounded text-center p-2;
+    @apply transition-colors duration-300 ease-in-out;
+    @apply hover:bg-zinc-100 hover:border-zinc-300;
+
+    &.current {
+        @apply bg-indigo-100 border-indigo-300;
+    }
+}
+
+.color-scheme {
+    width: 0;
+    height: 0;
+    border-width: 15px;
+    border-style: solid;
+    border-radius: 30px;
+    
+    &.scheme-light {
+        border-color: theme(colors.zinc.300);
+    }
+
+    &.scheme-dark {
+        border-color: theme(colors.zinc.800);
+    }
+
+    &.scheme-focus {
+        border-right-color: theme(colors.zinc.300);
+        border-bottom-color: theme(colors.zinc.300);
+        border-top-color: theme(colors.zinc.800);
+        border-left-color: theme(colors.zinc.800);
+    }
+}

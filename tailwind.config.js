@@ -5,8 +5,14 @@ module.exports = {
     ],
     darkMode: 'class',
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                special: ['Montserrat', 'sans-serif']
+            },
+            transitionProperty: {
+                'position': 'top, left, right, bottom'
+            }
+        },
     },
     plugins: [],
 }
-  

@@ -1,0 +1,92 @@
+
+/* ----------------------------------------
+/*  Offcanvas Component
+/* --------------------------------------*/
+
+.offcanvas {
+    @apply top-0 left-0 bottom-0 fixed w-80 h-screen z-50;
+    @apply transition-transform duration-300 ease-in-out;
+    @apply bg-white;
+    box-shadow: 6px 0 3px -3px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+
+    &.show {
+        transform: translateX(0);
+    }
+}
+
+.backdrop {
+    @apply top-0 left-0 w-full h-full fixed z-30 fixed;
+    @apply bg-black bg-opacity-30;
+}
+
+
+/* ----------------------------------------
+/*  Offcanvas Sizes
+/* --------------------------------------*/
+
+.offcanvas-sm {
+    @apply w-80;
+}
+
+.offcanvas-md {
+    @apply w-[450px];
+}
+
+.offcanvas-lg {
+    @apply w-[600px];
+}
+
+
+/* ----------------------------------------
+/*  Offcanvas Positions
+/* --------------------------------------*/
+
+.offcanvas-top {
+    @apply w-full h-60;
+    transform: translateY(-100%);
+    box-shadow: 0 6px 3px -3px rgba(0, 0, 0, 0.1);
+
+    &.offcanvas-sm {
+        @apply h-60 w-full;
+    }
+    
+    &.offcanvas-md {
+        @apply h-80 w-full;
+    }
+    
+    &.offcanvas-lg {
+        @apply h-[500px] w-full;
+    }
+    &.show {
+        transform: translateY(0);
+    }
+}
+
+.offcanvas-right {
+    @apply left-auto right-0;
+    transform: translateX(100%);
+    box-shadow: -6px 0 3px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+.offcanvas-bottom {
+    @apply w-full h-60 top-auto;
+    transform: translateY(100%);
+    box-shadow: 0 -6px 3px -3px rgba(0, 0, 0, 0.1);
+
+    &.offcanvas-sm {
+        @apply h-60 w-full;
+    }
+    
+    &.offcanvas-md {
+        @apply h-80 w-full;
+    }
+    
+    &.offcanvas-lg {
+        @apply h-[500px] w-full;
+    }
+    &.show {
+        transform: translateY(0);
+    }
+}

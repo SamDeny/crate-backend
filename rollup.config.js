@@ -12,21 +12,27 @@ export default {
         entryFileNames: 'js/crate-backend.min.js',
         format: 'es',
         globals: {
-            alpinejs: 'Alpine'
+            'dayjs': 'dayjs',
+            '@floating-ui/dom': '@floating-ui/dom',
         },
         plugins: [
-            terser()
+            //terser()
         ]
     },
     external: (id) => {
-        return id.indexOf('./vendor/') >= 0;
+        return id.indexOf('./vendor/') >= 0 || id === '@floating-ui/dom';
     },
     plugins: [
         resolve(),
-        typescript(),
         postCSS({
             extract: 'css/crate-backend.min.css',
             minimize: true
+        }),
+        typescript({
+            rootDir: './resources',
+            include: [
+                '**/*.ts'
+            ]
         })
     ]
 }

@@ -1,4 +1,39 @@
 
+/* ----------------------------------------
+/*  Base Design
+/* --------------------------------------*/
+
 @import "tailwindcss/base";
+@import './Base/Fonts';
+@import './Base/Link';
+@import './Base/Headers';
+
+
+/* ----------------------------------------
+/*  Components
+/* --------------------------------------*/
+
 @import "tailwindcss/components";
+@import './Components/Breadcrumbs';
+@import './Components/Buttons';
+@import './Components/Fields';
+@import './Components/Offcanvas';
+@import './Components/Panel';
+@import './Components/Popover';
+
+
+/* ----------------------------------------
+/*  Utilities
+/* --------------------------------------*/
+
 @import "tailwindcss/utilities";
+
+
+/* ----------------------------------------
+/*  Theme Design
+/* --------------------------------------*/
+
+@import './Theme/Header';
+@import './Theme/Menu';
+@import './Theme/Page';
+@import './Theme/Dashboard';

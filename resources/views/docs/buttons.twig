@@ -1,0 +1,120 @@
+{% extends '@layouts/admin' %}
+
+{% block content %}
+    <h2>Buttons</h2>
+    <div class="flex flex-wrap gap-5">
+        <a href="" class="btn">Normal Button</a>
+        <a href="" class="btn btn-red">Red Button</a>
+        <a href="" class="btn btn-orange">Orange Button</a>
+        <a href="" class="btn btn-amber">Amber Button</a>
+        <a href="" class="btn btn-yellow">Yellow Button</a>
+        <a href="" class="btn btn-lime">Lime Button</a>
+        <a href="" class="btn btn-green">Green Button</a>
+        <a href="" class="btn btn-emerald">Emerald Button</a>
+        <a href="" class="btn btn-teal">Teal Button</a>
+        <a href="" class="btn btn-cyan">Cyan Button</a>
+        <a href="" class="btn btn-sky">Sky Button</a>
+        <a href="" class="btn btn-blue">blue Button</a>
+        <a href="" class="btn btn-indigo">Indigo Button</a>
+        <a href="" class="btn btn-violet">Violet Button</a>
+        <a href="" class="btn btn-purple">Purple Button</a>
+        <a href="" class="btn btn-fuchsia">Fuchsia Button</a>
+        <a href="" class="btn btn-pink">Pink Button</a>
+        <a href="" class="btn btn-rose">Rose Button</a>
+        <a href="" class="btn btn-light">Light Button</a>
+        <a href="" class="btn btn-dark">Dark Button</a>
+        <a href="" class="btn btn-dark disabled">Disabled Button</a>
+    </div>
+
+    <h2>Button Sizes</h2>
+    <div class="flex flex-wrap items-center gap-5">
+        <a href="" class="btn btn-indigo btn-sm">Small Button</a>
+        <a href="" class="btn btn-indigo btn-md">Normal Button</a>
+        <a href="" class="btn btn-indigo btn-lg">Large Button</a>
+        <a href="" class="btn btn-indigo btn-xl">Huge Button</a>
+    </div>
+
+    <h2>Buttons with Icons</h2>
+    <div class="flex flex-wrap items-center gap-5">
+        <a href="" class="btn btn-indigo btn-sm btn-with-icon">
+            <span class="btn-icon">
+                {{ icon('chevron-right') }}
+            </span>
+            <span class="btn-text">Left Icon</span>
+        </a>
+
+        <a href="" class="btn btn-indigo btn-sm btn-with-icon">
+            <span class="btn-text">Right Icon</span>
+            <span class="btn-icon">
+                {{ icon('chevron-left') }}
+            </span>
+        </a>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-5 mt-4">
+        <a href="" class="btn btn-indigo btn-md btn-with-icon">
+            <span class="btn-icon">
+                {{ icon('chevron-right') }}
+            </span>
+            <span class="btn-text">Left Icon</span>
+        </a>
+
+        <a href="" class="btn btn-indigo btn-md btn-with-icon">
+            <span class="btn-text">Right Icon</span>
+            <span class="btn-icon">
+                {{ icon('chevron-left') }}
+            </span>
+        </a>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-5 mt-4">
+        <a href="" class="btn btn-indigo btn-lg btn-with-icon">
+            <span class="btn-icon">
+                {{ icon('chevron-right') }}
+            </span>
+            <span class="btn-text">Left Icon</span>
+        </a>
+
+        <a href="" class="btn btn-indigo btn-lg btn-with-icon">
+            <span class="btn-text">Right Icon</span>
+            <span class="btn-icon">
+                {{ icon('chevron-left') }}
+            </span>
+        </a>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-5 mt-4">
+        <a href="" class="btn btn-indigo btn-xl btn-with-icon">
+            <span class="btn-icon">
+                {{ icon('chevron-right', 24) }}
+            </span>
+            <span class="btn-text">Left Icon</span>
+        </a>
+
+        <a href="" class="btn btn-indigo btn-xl btn-with-icon">
+            <span class="btn-text">Right Icon</span>
+            <span class="btn-icon">
+                {{ icon('chevron-left', 24) }}
+            </span>
+        </a>
+    </div>
+
+    <h2>Icon-Only Buttons</h2>
+    <div class="flex flex-wrap items-center gap-5">
+        <a href="" class="btn btn-indigo btn-sm btn-icon-only">
+            {{ icon('grid') }}
+        </a>
+        
+        <a href="" class="btn btn-indigo btn-md btn-icon-only">
+            {{ icon('grid') }}
+        </a>
+        
+        <a href="" class="btn btn-indigo btn-lg btn-icon-only">
+            {{ icon('grid') }}
+        </a>
+        
+        <a href="" class="btn btn-indigo btn-xl btn-icon-only">
+            {{ icon('grid', 24) }}
+        </a>
+    </div>
+{% endblock %}

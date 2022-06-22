@@ -1,0 +1,58 @@
+{% extends '@layouts/base' %}
+
+{% set html_classes = 'overflow-hidden' %}
+{% set body_classes = 'bg-white dark:bg-zinc-900 overflow-hidden' %}
+
+{% push js_top %}
+    <script type="text/javascript">
+        (function() {
+            const colorScheme = localStorage.getItem('color-scheme') || 'light';
+            if (colorScheme === 'light' || colorScheme === 'dark') {
+                document.documentElement.classList.add(colorScheme);
+            } else {
+                document.documentElement.classList.add('dark', 'focus');
+            }
+
+            const menuPinned = localStorage.getItem('menu-pinned') || 'no';
+            if (menuPinned === 'yes') {
+                document.documentElement.classList.add('menu-pinned');
+            }
+        }());
+    </script>
+{% endpush %}
+
+{% block document %}
+    <div id="adminPage" class="flex flex-col min-h-screen">
+        {% block document_header %}
+            <header class="w-full px-20 basis-[86px] flex items-center">
+                {% include '@partials/header' %}
+            </header>
+        {% endblock %}
+        
+        {% block document_body %}
+            <article class="flex flex-auto w-full">
+                <aside id="crateMenu" class="crate-menu" data-storage="pin_menu">
+                    <div class="menu-inner">
+                        {% include "_partials/sidebar.twig" %}
+                    </div>
+                </aside>
+
+                <main id="cratePage" class="crate-page">
+                    <div id="cratePageContent" class="crate-content">
+                        <ul class="breadcrumbs">
+                            <li class="crumb current">Collections</li>
+                        </ul>
+
+                        {% block content %}{% endblock %}
+                    </div>
+                </main>
+            </article>
+        {% endblock %}
+        
+        {% block document_footer %}
+            <footer class="w-full px-20 hidden">
+                Page Rendered in {{ dev | format_number({ fraction_digit: 3 }) }} seconds
+            </footer>
+        {% endblock %}
+    </div>
+{% endblock %}

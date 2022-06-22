@@ -6,7 +6,7 @@ use Citrus\Http\Request;
 use Citrus\Http\Response;
 use Crate\Backend\Concerns\BackendControllerConcern;
 
-class DashboardController extends BackendControllerConcern
+class CollectionsController extends BackendControllerConcern
 {
 
     /**
@@ -20,7 +20,7 @@ class DashboardController extends BackendControllerConcern
         $response = new Response();
 
         return $response->setHTML(
-            $this->view->render('dashboard', [
+            $this->view->render('collections', [
                 'dev' => microtime(true) - citrus()->getStartTime(),
                 'error' => '',
                 'username' => '',

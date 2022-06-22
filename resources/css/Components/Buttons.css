@@ -1,0 +1,289 @@
+
+/* ----------------------------------------
+/*  Button
+/* --------------------------------------*/
+
+.btn {
+    @apply inline-block px-6 py-1 border rounded outline-none cursor-pointer;
+    @apply transition-colors duration-300 ease-in-out;
+    @apply bg-white border-zinc-300;
+    --btn-focus-shadow-color: theme(colors.zinc.600 / 25%);
+
+    &:hover {
+        @apply bg-zinc-200 border-zinc-600 text-zinc-800;
+    }
+
+    &:disabled,
+    &.disabled {
+        @apply cursor-not-allowed;
+    }
+}
+.dark .btn:not(.btn-red):not(.btn-orange):not(.btn-amber):not(.btn-yellow):not(.btn-lime):not(.btn-green):not(.btn-emerald):not(.btn-teal):not(.btn-cyan):not(.btn-sky):not(.btn-blue):not(.btn-indigo):not(.btn-violet):not(.btn-purple):not(.btn-fuchsia):not(.btn-pink):not(.btn-rose):not(.btn-light):not(.btn-dark) {
+    @apply bg-zinc-800 border-zinc-600 text-zinc-300;
+
+    &:hover {
+        @apply bg-zinc-600 border-zinc-400 text-zinc-300;
+    }
+}
+
+
+/* ----------------------------------------
+/*  Button Sizes
+/* --------------------------------------*/
+
+.btn-sm {
+    @apply h-[26px];
+    @apply px-4 py-0.5 text-sm;
+}
+
+.btn-md {
+    @apply h-[34px];
+    @apply px-6 py-1 text-base;
+}
+
+.btn-lg {
+    @apply h-[40px];
+    @apply px-8 py-[0.4375rem] text-base;
+}
+
+.btn-xl {
+    @apply h-[54px];
+    @apply px-12 py-3 text-lg;
+}
+
+
+/* ----------------------------------------
+/*  Button Colours
+/* --------------------------------------*/
+
+.btn-red {
+    @apply bg-red-600 border-red-600 text-white;
+    --btn-focus-shadow-color: theme(colors.red.600 / 25%);
+
+    &:hover {
+        @apply bg-red-800 border-red-800 text-white;
+    }
+}
+.btn-orange {
+    @apply bg-orange-600 border-orange-600 text-white;
+    --btn-focus-shadow-color: theme(colors.orange.600 / 25%);
+
+    &:hover {
+        @apply bg-orange-800 border-orange-800 text-white;
+    }
+}
+.btn-amber {
+    @apply bg-amber-600 border-amber-600 text-white;
+    --btn-focus-shadow-color: theme(colors.amber.600 / 25%);
+
+    &:hover {
+        @apply bg-amber-800 border-amber-800 text-white;
+    }
+}
+.btn-yellow {
+    @apply bg-yellow-600 border-yellow-600 text-white;
+    --btn-focus-shadow-color: theme(colors.yellow.600 / 25%);
+
+    &:hover {
+        @apply bg-yellow-800 border-yellow-800 text-white;
+    }
+}
+.btn-lime {
+    @apply bg-lime-600 border-lime-600 text-white;
+    --btn-focus-shadow-color: theme(colors.lime.600 / 25%);
+
+    &:hover {
+        @apply bg-lime-800 border-lime-800 text-white;
+    }
+}
+.btn-green {
+    @apply bg-green-600 border-green-600 text-white;
+    --btn-focus-shadow-color: theme(colors.green.600 / 25%);
+
+    &:hover {
+        @apply bg-green-800 border-green-800 text-white;
+    }
+}
+.btn-emerald {
+    @apply bg-emerald-600 border-emerald-600 text-white;
+    --btn-focus-shadow-color: theme(colors.emerald.600 / 25%);
+
+    &:hover {
+        @apply bg-emerald-800 border-emerald-800 text-white;
+    }
+}
+.btn-teal {
+    @apply bg-teal-600 border-teal-600 text-white;
+    --btn-focus-shadow-color: theme(colors.teal.600 / 25%);
+
+    &:hover {
+        @apply bg-teal-800 border-teal-800 text-white;
+    }
+}
+.btn-cyan {
+    @apply bg-cyan-600 border-cyan-600 text-white;
+    --btn-focus-shadow-color: theme(colors.cyan.600 / 25%);
+
+    &:hover {
+        @apply bg-cyan-800 border-cyan-800 text-white;
+    }
+}
+.btn-sky {
+    @apply bg-sky-600 border-sky-600 text-white;
+    --btn-focus-shadow-color: theme(colors.sky.600 / 25%);
+
+    &:hover {
+        @apply bg-sky-800 border-sky-800 text-white;
+    }
+}
+.btn-blue {
+    @apply bg-blue-600 border-blue-600 text-white;
+    --btn-focus-shadow-color: theme(colors.blue.600 / 25%);
+
+    &:hover {
+        @apply bg-blue-800 border-blue-800 text-white;
+    }
+}
+.btn-indigo {
+    @apply bg-indigo-600 border-indigo-600 text-white;
+    --btn-focus-shadow-color: theme(colors.indigo.600 / 25%);
+
+    &:hover {
+        @apply bg-indigo-800 border-indigo-800 text-white;
+    }
+}
+.btn-violet {
+    @apply bg-violet-600 border-violet-600 text-white;
+    --btn-focus-shadow-color: theme(colors.violet.600 / 25%);
+
+    &:hover {
+        @apply bg-violet-800 border-violet-800 text-white;
+    }
+}
+.btn-purple {
+    @apply bg-purple-600 border-purple-600 text-white;
+    --btn-focus-shadow-color: theme(colors.purple.600 / 25%);
+
+    &:hover {
+        @apply bg-purple-800 border-purple-800 text-white;
+    }
+}
+.btn-fuchsia {
+    @apply bg-fuchsia-600 border-fuchsia-600 text-white;
+    --btn-focus-shadow-color: theme(colors.fuchsia.600 / 25%);
+
+    &:hover {
+        @apply bg-fuchsia-800 border-fuchsia-800 text-white;
+    }
+}
+.btn-pink {
+    @apply bg-pink-600 border-pink-600 text-white;
+    --btn-focus-shadow-color: theme(colors.pink.600 / 25%);
+
+    &:hover {
+        @apply bg-pink-800 border-pink-800 text-white;
+    }
+}
+.btn-rose {
+    @apply bg-rose-600 border-rose-600 text-white;
+    --btn-focus-shadow-color: theme(colors.rose.600 / 25%);
+
+    &:hover {
+        @apply bg-rose-800 border-rose-800 text-white;
+    }
+}
+.btn-light {
+    @apply bg-zinc-100 border-zinc-100 text-zinc-800;
+    @apply dark:bg-zinc-700 dark:border-zinc-700 dark:text-zinc-200;
+    --btn-focus-shadow-color: theme(colors.zinc.600 / 25%);
+
+    &:hover {
+        @apply bg-zinc-300 border-zinc-300 text-zinc-800;
+        @apply dark:bg-zinc-500 dark:border-zinc-500 dark:text-zinc-200;
+    }
+}
+.btn-dark {
+    @apply bg-zinc-600 border-zinc-600 text-white;
+    @apply dark:bg-zinc-300 dark:border-zinc-300 dark:text-zinc-800;
+    --btn-focus-shadow-color: theme(colors.zinc.600 / 25%);
+
+    &:hover {
+        @apply bg-zinc-800 border-zinc-800 text-white;
+        @apply dark:bg-zinc-100 dark:border-zinc-100 dark:text-zinc-800;
+    }
+}
+
+/* Default Focus */
+.btn:focus:not(:disabled):not(.disabled) {
+    box-shadow: 0 0 0 3px var(--btn-focus-shadow-color);
+}
+
+/* Default Active */
+.btn:active {
+    @apply bg-zinc-800 border-zinc-800 text-zinc-300;
+    --btn-focus-shadow-color: theme(colors.zinc.800 / 25%);
+}
+
+/* Overwrite Default Active */
+.btn-light:active {
+    @apply bg-zinc-400 border-zinc-400 text-zinc-900;
+}
+
+/* Default Disabled */
+.btn:disabled,
+.btn.disabled {
+    @apply line-through;
+    @apply bg-zinc-400 border-zinc-400 text-zinc-700;
+}
+
+
+/* ----------------------------------------
+/*  Icon Buttons
+/* --------------------------------------*/
+
+.btn-with-icon {
+    @apply inline-flex items-center;
+
+    & > .btn-icon:first-child {
+        @apply -ml-2 mr-2;
+    }
+    &:not(.btn-sm) > .btn-icon:first-child {
+        @apply mt-px;
+    }
+
+    & > .btn-icon:last-child {
+        @apply ml-2 -mr-2;
+    }
+    &:not(.btn-sm) > .btn-icon:last-child {
+        @apply mt-px;
+    }
+}
+
+
+/* ----------------------------------------
+/*  Icon-Only Buttons
+/* --------------------------------------*/
+
+.btn-icon-only {
+    @apply px-1 py-1 inline-flex justify-center items-center;
+
+    &.btn-sm {
+        @apply w-[26px];
+        @apply px-1 py-1;
+    }
+    
+    &.btn-md {
+        @apply w-[34px];
+        @apply px-2 py-2;
+    }
+    
+    &.btn-lg {
+        @apply w-[40px];
+        @apply px-2.5 py-2.5;
+    }
+    
+    &.btn-xl {
+        @apply w-[54px];
+        @apply px-3.5 py-3.5;
+    }
+}

@@ -1,0 +1,307 @@
+
+/* ----------------------------------------
+/*  Crate Menu / Navigation
+/* --------------------------------------*/
+
+.crate-menu {
+    @apply absolute top-[87px] left-0 right-0 w-full h-0 overflow-hidden;
+    @apply transition-all duration-300 ease-in-out;
+    @apply bg-white;
+
+    &.show {
+        height: calc(100%-87px);
+    }
+    &.show:not(.in-transition) {
+        @apply overflow-visible;
+    }
+
+    .menu-inner {
+        @apply px-20 py-10;
+
+        &::before,
+        &::after {
+            @apply absolute block -translate-x-1/2;
+            @apply duration-300 ease-in-out;
+            transition-property: top, opacity;
+            content: "";
+            opacity: 0;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        
+        &::before {
+            @apply bg-zinc-300 left-20 top-0;
+            width: 16px;
+            height: 10px;
+            z-index: 10;
+            margin-left: 20px;
+        }
+
+        &::after {
+            @apply bg-white left-20 top-px;
+            width: 14px;
+            height: 9px;
+            z-index: 15;
+            margin-left: 20px;
+        }
+    }
+
+    &.show:not(.in-transition) .menu-inner {
+        &::before {
+            top: -9px;
+            opacity: 1;
+        }
+
+        &::after {
+            top: -8px;
+            opacity: 1;
+        }
+    }
+
+    .navbar-toggle {
+        @apply rounded px-2 py-2 inline-block self-end;
+        @apply bg-zinc-100;
+    }
+
+    .navbar {
+        @apply flex flex-col;
+        
+        .navbar-nav {
+            @apply flex flex-wrap mb-6 gap-2;
+        }
+
+        .nav-title {
+            @apply block basis-full mb-3;
+            @apply text-zinc-600 font-special text-lg;
+            @apply dark:text-zinc-300;
+        }
+
+        .nav-item {
+            @apply text-center w-40;
+        }
+
+        .nav-link {
+            @apply py-4 border rounded block;
+            @apply transition-colors duration-300 ease-in-out;
+            @apply border-zinc-300 text-zinc-700;
+            @apply dark:text-zinc-400;
+
+            .nav-icon {
+                @apply flex w-full justify-center items-center mb-2;
+                @apply transition-colors duration-300 ease-in-out;
+
+                svg {
+                    @apply w-8 h-8;
+                }
+            }
+
+            &:hover {
+                @apply border-fuchsia-700 bg-fuchsia-100;
+                @apply dark:bg-transparent;
+
+                .nav-icon {
+                    @apply text-fuchsia-700;
+                }
+            }
+        }
+
+        .nav-item.item-red > .nav-link:hover {
+            @apply border-red-700 bg-red-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-red-700;
+            }
+        }
+        .nav-item.item-orange > .nav-link:hover {
+            @apply border-orange-700 bg-orange-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-orange-700;
+            }
+        }
+        .nav-item.item-amber > .nav-link:hover {
+            @apply border-amber-700 bg-amber-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-amber-700;
+            }
+        }
+        .nav-item.item-yellow > .nav-link:hover {
+            @apply border-yellow-700 bg-yellow-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-yellow-700;
+            }
+        }
+        .nav-item.item-lime > .nav-link:hover {
+            @apply border-lime-700 bg-lime-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-lime-700;
+            }
+        }
+        .nav-item.item-green > .nav-link:hover {
+            @apply border-green-700 bg-green-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-green-700;
+            }
+        }
+        .nav-item.item-emerald > .nav-link:hover {
+            @apply border-emerald-700 bg-emerald-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-emerald-700;
+            }
+        }
+        .nav-item.item-teal > .nav-link:hover {
+            @apply border-teal-700 bg-teal-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-teal-700;
+            }
+        }
+        .nav-item.item-cyan > .nav-link:hover {
+            @apply border-cyan-700 bg-cyan-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-cyan-700;
+            }
+        }
+        .nav-item.item-sky > .nav-link:hover {
+            @apply border-sky-700 bg-sky-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-sky-700;
+            }
+        }
+        .nav-item.item-blue > .nav-link:hover {
+            @apply border-blue-700 bg-blue-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-blue-700;
+            }
+        }
+        .nav-item.item-indigo > .nav-link:hover {
+            @apply border-indigo-700 bg-indigo-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-indigo-700;
+            }
+        }
+        .nav-item.item-violet > .nav-link:hover {
+            @apply border-violet-700 bg-violet-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-violet-700;
+            }
+        }
+        .nav-item.item-purple > .nav-link:hover {
+            @apply border-purple-700 bg-purple-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-purple-700;
+            }
+        }
+        .nav-item.item-fuchsia > .nav-link:hover {
+            @apply border-fuchsia-700 bg-fuchsia-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-fuchsia-700;
+            }
+        }
+        .nav-item.item-pink > .nav-link:hover {
+            @apply border-pink-700 bg-pink-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-pink-700;
+            }
+        }
+        .nav-item.item-rose > .nav-link:hover {
+            @apply border-rose-700 bg-rose-100;
+            @apply dark:bg-transparent;
+
+            .nav-icon {
+                @apply text-rose-700;
+            }
+        }
+
+    }
+}
+
+
+/* ----------------------------------------
+/*  Crate Static Menu / Navigation
+/* --------------------------------------*/
+
+.menu-pinned .crate-menu {
+    @apply relative top-auto left-auto right-auto w-80 basis-80 overflow-visible flex-shrink-0 flex-grow-0;
+    @apply transition-none;
+
+    .menu-inner {
+        @apply overflow-auto pl-20 pt-4 pr-4;
+        height: calc(100vh - 87px);
+    }
+
+    .navbar-toggle {
+        @apply self-center;
+        order: 99;
+    }
+    
+    .navbar {
+        .nav-title {
+            @apply text-sm;
+        }
+
+        .navbar-nav {
+            @apply mb-4;
+        }
+
+        .navbar-nav:first-child,
+        .navbar-toggle + .navbar-nav {
+            & > .nav-title {
+                @apply hidden;
+            }
+        }
+
+        .nav-title {
+            @apply mb-1;
+        }
+
+
+        .nav-item {
+            @apply text-center w-full;
+        }
+
+        .nav-link {
+            @apply py-2 pr-4 pl-2 flex flex-row items-center;
+
+            .nav-icon {
+                @apply w-8 justify-center flex mb-0 mr-2;
+
+                svg {
+                    @apply w-6 h-6;
+                }
+            }
+
+            &:not(:hover) {
+                @apply border-transparent;
+            }
+        }
+    }
+}

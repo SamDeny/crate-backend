@@ -1,0 +1,20 @@
+
+/* ----------------------------------------
+/*  Crate Dashboard Page
+/* --------------------------------------*/
+
+.dashboard {
+    @apply flex flex-row gap-8 max-w-[1400px] mx-auto;
+
+    .dashboard-row {
+        @apply basis-auto flex-1 gap-8 flex flex-col;
+
+        &.row-1 {
+            @apply basis-[27%];
+        }
+        
+        &.row-2 {
+            @apply basis-[46%];
+        }
+    }
+}

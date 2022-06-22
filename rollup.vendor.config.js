@@ -1,12 +1,13 @@
 
 import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 import copy from 'rollup-plugin-copy';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
     input: [
-        './resources/ts/vendor/alpine.js',
-        './resources/ts/vendor/flatpickr.js'
+        './resources/ts/vendor/dayjs.js',
+        './resources/ts/vendor/floating.ts',
     ],
     output: {
         compact: true,
@@ -17,7 +18,10 @@ export default {
         ]
     },
     plugins: [
-        resolve(),
+        resolve({
+            browser: true
+        }),
+        typescript(),
         copy({
             targets: [
                 { 

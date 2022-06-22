@@ -1,8 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Crate\Module\Backend;
+namespace Crate\Backend\Controllers;
 
-class LoginController extends Controller
+use Crate\Backend\Concerns\BackendControllerConcern;
+
+class LoginController extends BackendControllerConcern
 {
 
     public function __construct()

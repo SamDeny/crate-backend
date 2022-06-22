@@ -1,0 +1,35 @@
+
+/* ----------------------------------------
+/*  Breadcrumbs Component
+/* --------------------------------------*/
+
+.breadcrumbs {
+    @apply flex;
+
+    .crumb {
+        @apply uppercase px-3 py-1 text-sm relative;
+        @apply text-zinc-400;
+
+        &:not(:first-child)::before {
+            @apply -left-1 top-0 text-lg absolute font-normal;
+            @apply text-zinc-300;
+            content: "/";
+        }
+        a {
+            @apply transition-colors duration-300 ease-in-out;
+            @apply text-zinc-800;
+
+            &:hover {
+                @apply text-red-600;
+            } 
+        }
+    }
+    .crumb.current {
+        @apply font-semibold rounded ml-2;
+        @apply bg-red-600 text-white;
+
+        &::before {
+            @apply -left-3
+        }
+    }
+}

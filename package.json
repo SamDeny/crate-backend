@@ -18,13 +18,15 @@
         "build:vendor": "rollup -c rollup.vendor.config.js",
         "watch": "rollup -c -w"
     },
+    "dependencies": {
+        "@floating-ui/dom": "^0.5.3",
+        "bootstrap-icons": "^1.8.3",
+        "dayjs": "^1.11.3"
+    },
     "devDependencies": {
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@rollup/plugin-typescript": "^8.3.3",
-        "alpinejs": "^3.10.2",
         "autoprefixer": "^10.4.7",
-        "bootstrap-icons": "^1.8.3",
-        "flatpickr": "^4.6.13",
         "postcss-import": "^14.1.0",
         "rollup": "^2.75.6",
         "rollup-plugin-copy": "^3.4.0",
