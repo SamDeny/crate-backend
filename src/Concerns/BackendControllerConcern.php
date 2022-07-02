@@ -4,6 +4,7 @@ namespace Crate\Backend\Concerns;
 
 use Citrus\Http\Request;
 use Citrus\Router\Route;
+use Crate\Backend\Api\Administration;
 use Crate\Core\Contracts\ControllerContract;
 use Crate\View\Assets;
 use Crate\View\View;
@@ -48,6 +49,12 @@ abstract class BackendControllerConcern implements ControllerContract
         $this->view->getTwigEnvironment()->addFunction(
             new TwigFunction('csrf', [$this, 'getCsrfToken'])
         );
+
+        /** @var Administration */
+        $admin = citrus(Administration::class);
+        $this->view->addGlobal('backend', [
+            'menus' => $admin->getMenus()
+        ]);
     }
 
     /**

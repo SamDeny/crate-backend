@@ -10,5 +10,7 @@ module(function (Module $module) {
 
 
     $module->routes('routes.php');
+
+    $module->runtime(\Crate\Backend\Module::class);
     
 });

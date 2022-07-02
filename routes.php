@@ -24,6 +24,7 @@ citrus(function(Router $router) {
         $router->get('/logout', LoginController::class);
     
         // Start another group with more shared properties
+        /*
         $router->group([
             'middleware' => [AuthenticationMiddleware::class],
             'middlewareOptions' => [
@@ -64,6 +65,7 @@ citrus(function(Router $router) {
             //);
             
         });
+        */
     
         // Register some error pages
         $router->error(400, [HTTPErrorController::class, 'e400']);       // Bad Request
